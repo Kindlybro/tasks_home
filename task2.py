@@ -20,19 +20,16 @@ inputs = [
 ]
 
 # тут ваше решение:
-def proverka(a: int, b: int, c: int) -> bool:
-    result = (a % 2) + (b % 2) + (c % 2)
-    if result == 0 or result == 3:
-        return True
-    return False
-
-
-def result(result: bool) -> None:
-    if result:
-        print("WIN")
+for cfr in inputs:
+    number_list = cfr.split()
+    values = list(map(int, number_list))
+    n = 0
+    enum_numbers = 0
+    for value in values:
+        if value % 2 == 0:
+            enum_numbers += 1
+        n += 1
+    if(enum_numbers == n or enum_numbers == 0):
+        print('WIN')
     else:
-        print("FAIL")
-
-
-a, b, c = map(int, input().strip().split())
-result(proverka(a, b, c))
+        print('FAIL')
